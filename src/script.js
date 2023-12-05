@@ -1,8 +1,6 @@
 window.onload = function() {
     var logoElement = document.getElementById('myLogo');
     var titleElement = document.getElementById('myTitleArea');
-
-    // Store the line in a variable to reference it later
     var myLine = new LeaderLine(
         logoElement,
         titleElement,
@@ -16,9 +14,8 @@ window.onload = function() {
         }
     );
 
-    // Add an event listener to the window's scroll event
+
     window.addEventListener('scroll', function() {
-        // Call the position method on the LeaderLine instance to update its position
         myLine.position();
     });
 };
