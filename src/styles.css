@@ -1,0 +1,128 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0; 
+}
+
+.container {
+    width: 640px; 
+    margin: 0 auto; 
+    background-color: #ffffff; 
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    padding: 36px;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 24px;
+    color: black;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: black;
+    transition: width .5s ease;
+    -webkit-transition: width .5s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+    background: black;
+}
+
+.title-area {
+    text-align: left; 
+    font-size: 36px; 
+    background-color: #ffffff; 
+    margin: 1px auto; 
+    font-weight: bold;
+    padding: 36px;
+  }
+
+
+  main h1 {
+    font-size: 36px;
+    position: relative; 
+    padding-left: 36px; 
+    padding-right: 20px; 
+    padding-bottom: 10px; 
+    margin-top: 1px;
+    margin: 0; 
+}
+
+#you h1::before {
+    content: '';
+    position: absolute;
+    left: -20px; 
+    bottom: 0; 
+    height: 5px; 
+    background: black; 
+    width: 130px; 
+}
+
+#us h1::before {
+    content: '';
+    position: absolute;
+    left: -20px; 
+    bottom: 0; 
+    height: 5px; 
+    background: black; 
+    width: 105px; 
+}
+
+#we h1::before {
+    content: '';
+    position: absolute;
+    left: -20px; 
+    bottom: 0; 
+    height: 5px; 
+    background: black; 
+    width: 115px;
+}
+
+
+main p {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 36px;
+}
+
+#connector-line {
+    position: absolute;
+    background-color: black; /* Line color */
+    width: 2px; /* Line thickness */
+    /* The height and transform properties will be set by JavaScript */
+    transform-origin: 0 0; /* Ensures the line rotates around its start point */
+    transform: rotate(0deg); /* Initial rotation, will be overridden by JavaScript */
+}
+
+
+
