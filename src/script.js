@@ -1,39 +1,24 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const line = document.getElementById('connector-line');
-    const logo = document.querySelector('.logo');
-    const titleArea = document.querySelector('.title-area');
+window.onload = function() {
+    var logoElement = document.getElementById('myLogo');
+    var titleElement = document.getElementById('myTitleArea');
 
-    function drawLine() {
-        const logoRect = logo.getBoundingClientRect();
-        const titleRect = titleArea.getBoundingClientRect();
-
-        // Calculate the start and end points of the line
-        const startX = logoRect.right;
-        const startY = logoRect.top + logoRect.height / 2; // Middle of the logo
-        const endX = titleRect.left;
-        const endY = titleRect.top + titleRect.height / 2; // Middle of the title
-
-        // Set the position and size of the line
-        line.style.width = `${endX - startX}px`;
-        line.style.top = `${startY}px`;
-        line.style.left = `${startX}px`;
-
-        // If the objects are not aligned horizontally, adjust the line to connect them
-        if (startY !== endY) {
-            // Calculate the angle needed to tilt the line
-            const angle = Math.atan2(endY - startY, endX - startX) * (40 / Math.PI);
-            line.style.transform = `rotate(${angle}deg)`;
-            // Set the height to be the distance between the two points
-            line.style.height = `${Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2))}px`;
-            // Reset the width since we're using height to represent the line length
-            line.style.width = `5px`; // Make sure the line's width is enough to be visible when rotated
+    // Store the line in a variable to reference it later
+    var myLine = new LeaderLine(
+        logoElement,
+        titleElement,
+        {
+            path: 'straight', 
+            startSocket: 'right', 
+            endSocket: 'left-top', 
+            color: 'black',
+            size: 4,
+            endPlug: 'behind'
         }
-    }
+    );
 
-    // Redraw the line whenever the window resizes or the user scrolls
-    window.addEventListener('resize', drawLine);
-    window.addEventListener('scroll', drawLine);
-
-    // Draw the initial line
-    drawLine();
-});
+    // Add an event listener to the window's scroll event
+    window.addEventListener('scroll', function() {
+        // Call the position method on the LeaderLine instance to update its position
+        myLine.position();
+    });
+};

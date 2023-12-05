@@ -18,7 +18,23 @@ header {
     justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    padding: 36px;
+    position: fixed;
+    top: 0;
+    left: 50%; 
+    width: 680px ; 
+    transform: translateX(-50%); 
+    padding: 0 60px;
+    background-color: #ffffff;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+nav {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+
 }
 
 .logo {
@@ -65,6 +81,7 @@ nav ul li a:hover::after {
     margin: 1px auto; 
     font-weight: bold;
     padding: 36px;
+    padding-top: 200px;
   }
 
 
@@ -117,11 +134,11 @@ main p {
 
 #connector-line {
     position: absolute;
-    background-color: black; /* Line color */
-    width: 2px; /* Line thickness */
-    /* The height and transform properties will be set by JavaScript */
-    transform-origin: 0 0; /* Ensures the line rotates around its start point */
-    transform: rotate(0deg); /* Initial rotation, will be overridden by JavaScript */
+    background-color: black; 
+    width: 2px; 
+    transform-origin: 0 0; 
+    transform: rotate(0deg); 
+    z-index: 1001;
 }
 
 
